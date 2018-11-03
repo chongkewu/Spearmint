@@ -1,0 +1,8 @@
+Job launching after 0.53 seconds in submission.
+Running python job.
+Changed into dir /home/u32/chongkewu/PESC/Spearmint-PESC/examples/constrained
+Importing branin_con.py
+Running branin_con.main()
+Got result {'y_at_least_x': 0.06605272435681941, 'y_at_most_10': 7.014336000555556, 'branin': 0.9156496277367587}
+Completed successfully in 0.00 seconds. [{'y_at_least_x': 0.06605272435681941, 'y_at_most_10': 7.014336000555556, 'branin': 0.9156496277367587}]
+Evaluating at (2.919611, 2.985664)

@@ -1,0 +1,10 @@
+Job launching after 0.59 seconds in submission.
+Running python job.
+Changed into dir /home/u32/chongkewu/PESC/Spearmint-PESC/examples/noisy
+Importing branin_noisy.py
+Running branin_noisy.main()
+Got result -7.04783276627
+Completed successfully in 0.00 seconds. [{u'Objective': -7.047832766265785}]
+Anything printed here will end up in the output directory for job #12
+{u'y': array([15.]), u'x': array([-2.27256492])}
+Result = 26.041077, noise -33.088910, total -7.047833

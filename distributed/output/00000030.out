@@ -1,0 +1,21 @@
+Job launching after 0.50 seconds in submission.
+Running python job.
+Changed into dir /home/u32/chongkewu/PESC/Spearmint-PESC/examples/distributed
+Importing branin.py
+Running branin.main()
+Anything printed here will end up in the output directory for job #30
+{u'y': array([11.83630348]), u'x': array([-3.20687481])}
+Result = 0.773719
+Traceback (most recent call last):
+  File "/home/u32/chongkewu/PESC/lib/python2.7/site-packages/spearmint/launcher.py", line 245, in launch
+    result = python_launcher(job)
+  File "/home/u32/chongkewu/PESC/lib/python2.7/site-packages/spearmint/launcher.py", line 326, in python_launcher
+    result = module.main(job['id'], params)
+  File "/home/u32/chongkewu/PESC/Spearmint-PESC/examples/distributed/branin.py", line 24, in main
+    return branin(params['x'], params['y'])
+  File "/home/u32/chongkewu/PESC/Spearmint-PESC/examples/distributed/branin.py", line 17, in branin
+    time.sleep(np.random.randint(30))
+KeyboardInterrupt
+Problem executing the function
+Job failed in 9.28 seconds.
+(<type 'exceptions.KeyboardInterrupt'>, KeyboardInterrupt(), <traceback object at 0x2aaaff62fbd8>)

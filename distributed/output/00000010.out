@@ -1,0 +1,10 @@
+Job launching after 0.62 seconds in submission.
+Running python job.
+Changed into dir /home/u32/chongkewu/PESC/Spearmint-PESC/examples/distributed
+Importing branin.py
+Running branin.main()
+Got result {'branin': 42.22084200743513}
+Completed successfully in 8.01 seconds. [{'branin': 42.22084200743513}]
+Anything printed here will end up in the output directory for job #10
+{u'y': array([9.50550937]), u'x': array([1.5403356])}
+Result = 42.220842
