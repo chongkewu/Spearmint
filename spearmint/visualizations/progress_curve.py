@@ -199,7 +199,6 @@ mpl.rcParams['axes.unicode_minus'] = False
 import matplotlib.pyplot as plt
 plt.rc('text', usetex=True)
 
-
 from spearmint.visualizations         import plots_2d
 from spearmint.utils.parsing          import parse_config_file
 from spearmint.utils.parsing          import parse_tasks_from_jobs
@@ -265,7 +264,6 @@ def main(dirs,
     # Create the figure that plots utility gap
     fig = dict()
     ax  = dict()
-
     # averaging function
     if average == "mean":
         avg = np.mean
@@ -320,15 +318,17 @@ def main(dirs,
             else:
                 main_file = mainfile
 
-            sys.path.append(options['main_file_path']) # TODO: make this nicer with proper importing
-            module          = importlib.import_module(main_file)
+            sys.path.append(options['main_file_path']) # TODO: make this nicer with proper importin
+            if (main_file[-3:] == u'.py') is True :
+                Module          = importlib.import_module(main_file[:len(main_file)-3])
+            else:
+                Module          = importlib.import_module(main_file)
             sys.path.remove(options['main_file_path'])
 
         obj, con        = get_objectives_and_constraints(options) # get the names
         obj = obj[0] # only one objective
         print 'Found %d constraints' % len(con)
-
-        plot_utility_gap = rec_type=="model" and hasattr(module, 'true_val')
+        plot_utility_gap = rec_type=="model" and hasattr(Module, 'true_val')
 
         if plot_utility_gap:
             print 'PLOTTING UTILITY GAP'
@@ -391,7 +391,7 @@ def main(dirs,
             print 'Found %d iterations' % len(recs)
 
             if rec_type == "model":
-                values = [true_func(rec, module, violation_value, constraint_tol, obj, con) for rec in recs]
+                values = [true_func(rec, Module, violation_value, constraint_tol, obj, con) for rec in recs]
 
                 if log_scale:
                     ax['err'].plot(iters, map(np.log10,values))
@@ -771,6 +771,5 @@ if __name__ == '__main__':
         options["average"] = "median"      
     else:
         options["average"] = "mean"
-
     main(dirs, **options)
 
